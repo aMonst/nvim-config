@@ -52,7 +52,35 @@ packer.startup(
                     "nvim-lua/plenary.nvim"
                 },
                 config = function()
-                    require("config/gitsigns").setup()
+                    require("config/gitsigns")
+                end
+            }
+            -- 支持LSP的buffer栏
+            use {
+                "akinsho/bufferline.nvim",
+                requires = {
+                    "famiu/bufdelete.nvim" -- 删除 buffer 时不影响现有布局
+                },
+                config = function()
+                    require("config/bufferline")
+                end
+            } 
+            -- 搜索时显示条目 nvim-hlslens
+            use {
+                "kevinhwang91/nvim-hlslens",
+                config = function()
+                    require("config/nvim-hlslens")
+                end
+            }
+            --显示缩进线 indent-blankline
+            use {
+                "lukas-reineke/indent-blankline.nvim",
+            }
+            -- 自动匹配括号 autopairs
+            use{
+                "windwp/nvim-autopairs",
+                config = function()
+                    require("config/nvim-autopairs")
                 end
             }
         end,

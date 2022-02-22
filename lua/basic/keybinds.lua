@@ -38,3 +38,23 @@ map("n", "<leader>cs", "<cmd>set spell!<CR>", opt)
 
 -- nvim-tree 快捷键配置
 map('n', "<leader>1", ":NvimTreeToggle<CR>", opt)
+
+-- bufferline 快捷键配置
+map("n", "<C-q>", ":Bdelete<CR>", opt)
+-- 切换上一个缓冲区
+map("n", "<leader>h", ":BufferLineCyclePrev<CR>", opt)
+-- 切换到下一个缓冲区
+map("n", "<leader>l", ":BufferLineCycleNext<CR>", opt)
+
+-- 关闭左侧缓冲区
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+-- 关闭右侧缓冲区
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+
+--hlslens 快捷键
+map("n", "n", "<Cmd>execute('normal!'.v:count1.'n')<CR><Cmd>lua require('hlslens').start()<CR>", opt)
+map("n", "n", "<Cmd>execute('normal!'.v:count1.'N')<CR><Cmd>lua require('hlslens').start()<CR>", opt)
+map("n", "*", "*<Cmd>lua require('hlslens').start()<CR>", opt)
+map("n", "#", "#<Cmd>lua require('hlslens').start()<CR>", opt)
+map("n", "g*", "g*<Cmd>lua require('hlslens').start()<CR>", opt)
+map("n", "g#", "g#<Cmd>lua require('hlslens').start()<CR>", opt)
