@@ -83,6 +83,14 @@ packer.startup(
                     require("config/nvim-autopairs")
                 end
             }
+
+            -- 自动保存 autosave
+            use{
+                "Pocco81/AutoSave.nvim",
+                config = function()
+                    require("config/autosave")
+                end
+            }
         end,
         -- 使用浮动窗口
         config = {
