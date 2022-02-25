@@ -80,3 +80,24 @@ map("n", "<leader>tf", "<cmd>lua require('toggleterm').float_toggle()<CR>", opt)
 map("n", "<leader>tg", "<cmd>lua require('toggleterm').lazygit_toggle()<CR>", opt)
 -- 打开或者关闭所有终端
 map("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", opt)
+-- undotree 撤销更改
+map("n", "<leader>u", ":UndotreeToggle<CR>", opt)
+
+-- telescope 键位绑定
+-- 查找文件
+map("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown<CR>", opt)
+-- 查找文字
+map("n", "<leader>fg", "<cmd>Telescope live_grep theme=dropdown<CR>", opt)
+-- 查找特殊符号
+map("n", "<leader>fb", "<cmd>Telescope buffers theme=dropdown<CR>", opt)
+-- 查找帮助文档
+map("n", "<leader>fh", "<cmd>Telescope help_tags theme=dropdown<CR>", opt)
+-- 查找最近打开文件
+map("n", "<leader>fo", "<cmd>Telescope oldfiles theme=dropdown<CR>", opt)
+-- 查找marks标记
+map("n", "<leader>fm", "<cmd>Telescope marks theme=dropdown<CR>", opt)
+-- notify 快捷键绑定
+-- 显示历史弹框记录
+map("n", "<leader>fn", "<cmd>lua require('telescope').extensions.notify.nofity()<CR>", opt)
+-- todo-comments 快捷键
+map("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdowm<CR>", opt)

@@ -143,6 +143,48 @@ packer.startup(
                     require("config/toggleterm")
                 end
             }
+            -- undo tree
+            use{
+                "mbbill/undotree",
+                config = function()
+                    require("config/undotree")
+                end
+            }
+            -- 键位绑定器 which-key
+            use{
+                "folke/which-key.nvim",
+                config = function()
+                    require("config/which-key")
+                end
+            }
+            -- 模糊查找文件
+            use{
+                "nvim-telescope/telescope.nvim",
+                requires = {
+                    "nvim-lua/plenary.nvim",
+                    "BurntSushi/ripgrep",
+                    "sharkdp/fd"
+                },
+                config = function()
+                    require("config/telescope")
+                end
+            }
+
+            -- 弹框
+            use{
+                "rcarriga/nvim-notify",
+                config = function()
+                    require("config/nvim-notify")
+                end
+            }
+
+            -- 显示TODO注释
+            use{
+                "folke/todo-comments.nvim",
+                config = function()
+                    require("config/todo-comments")
+                end
+            }
         end,
         -- 使用浮动窗口
         config = {
