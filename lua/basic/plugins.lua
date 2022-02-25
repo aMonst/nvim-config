@@ -107,6 +107,42 @@ packer.startup(
                    require("config/auto-session")
                 end
             }
+
+            -- 全局搜索替换
+            use{
+                "nvim-pack/nvim-spectre",
+                requires = {
+                    "nvim-lua/plenary.nvim",
+                    "BurntSushi/ripgrep"
+                },
+                config = function()
+                    require("config/nvim-spectre")
+                end
+            }
+
+            --添加右侧滚动条
+            use{
+                "petertriho/nvim-scrollbar",
+                config = function()
+                    require("config/nvim-scrollbar")
+                end
+            }
+
+            -- 显示16进制颜色
+            use{
+                "norcalli/nvim-colorizer.lua",
+                config = function()
+                    require("config/nvim-colorizer")
+                end
+            }
+
+            -- 终端 toggleterm
+            use{
+                "akinsho/toggleterm.nvim",
+                config = function()
+                    require("config/toggleterm")
+                end
+            }
         end,
         -- 使用浮动窗口
         config = {

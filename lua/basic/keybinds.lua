@@ -1,8 +1,10 @@
 -- 键位设置配置
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-local map = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true}
+map = vim.api.nvim_set_keymap
+dmap = vim.api.nvim_del_keymap
+bmap = vim.api.nvim_buf_set_keymap
+opt = {noremap = true, silent = true}
 
 -- C-u和C-d调整为上下滑动10行而不是半页
 map("n", "<C-u>", "10k", opt)
@@ -58,3 +60,23 @@ map("n", "*", "*<Cmd>lua require('hlslens').start()<CR>", opt)
 map("n", "#", "#<Cmd>lua require('hlslens').start()<CR>", opt)
 map("n", "g*", "g*<Cmd>lua require('hlslens').start()<CR>", opt)
 map("n", "g#", "g#<Cmd>lua require('hlslens').start()<CR>", opt)
+
+-- spectre 快捷键
+-- 全项目替换
+map("n", "<leader>rp", "<cmd>lua require('spectre').open()<CR>", opt)
+-- 只替换当前文件
+map("n", "<leader>rf", "<cmd>lua require('spectre').open_file_search()<CR>", opt)
+-- 全项目中所有当前词
+map("n", "<leader>rw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opt)
+
+-- toggleterm 绑定
+-- 打开普通终端
+map("n", "<leader>tt", "<cmd>exe v:count.'ToggleTerm'<CR>", opt)
+-- 退出终端插入模式
+map("t", "<Esc>", "<C-\\><C-n>", opt)
+-- 进入浮动式终端
+map("n", "<leader>tf", "<cmd>lua require('toggleterm').float_toggle()<CR>", opt)
+-- 打开lazygit
+map("n", "<leader>tg", "<cmd>lua require('toggleterm').lazygit_toggle()<CR>", opt)
+-- 打开或者关闭所有终端
+map("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", opt)

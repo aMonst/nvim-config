@@ -8,7 +8,13 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. 安装该配置
+2. 安装其他依赖
+```shell
+#ubuntu
+sudo apt-get install ripgrep
+```
+
+3. 安装该配置
 ```shell
 git clone https://github.com/aMonst/nvim-config.git ~/.config/nvim
 ```
