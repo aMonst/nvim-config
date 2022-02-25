@@ -104,7 +104,7 @@ packer.startup(
             use{
                 "rmagatti/auto-session",
                 config = function()
-                --   require("config/auto-session")
+                   require("config/auto-session")
                 end
             }
         end,
