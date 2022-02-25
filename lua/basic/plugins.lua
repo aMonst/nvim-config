@@ -91,6 +91,22 @@ packer.startup(
                     require("config/autosave")
                 end
             }
+
+            -- 自动回复光标位置 lastplace
+            use{
+                "ethanholz/nvim-lastplace",
+                config = function()
+                    require("config/nvim-lastplace")
+                end
+            }
+
+            -- 会话管理 auto-session
+            use{
+                "rmagatti/auto-session",
+                config = function()
+                --   require("config/auto-session")
+                end
+            }
         end,
         -- 使用浮动窗口
         config = {
