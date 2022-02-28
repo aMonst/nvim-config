@@ -1,5 +1,10 @@
 -- https://github.com/williamboman/nvim-lsp-installer
 local lsp_installer_servers = require("nvim-lsp-installer.servers")
+
+-- 使用cmp_nvim_lsp 代替内置的omnifunc, 获取更强的补全体验
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
 -- WARN: 手动书写 LSP 配置文件
 -- 名称：https://github.com/williamboman/nvim-lsp-installer#available-lsps
 -- 配置：https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -66,6 +71,9 @@ for server_name, server_options in pairs(servers) do
                 server_options.flags = {
                     debounce_text_changes = 150
                 }
+
+                -- 代替内置 omnifunc
+                server_options.capabilities = capabilities
                 -- 启动服务
                 server:setup(server_options)
             end
@@ -77,3 +85,5 @@ for server_name, server_options in pairs(servers) do
         end
     end
 end
+
+
