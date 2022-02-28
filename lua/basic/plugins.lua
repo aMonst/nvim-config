@@ -185,6 +185,45 @@ packer.startup(
                     require("config/todo-comments")
                 end
             }
+
+            -- LSP 服务
+            use{
+                "neovim/nvim-lspconfig",
+                config = function()
+                    require("config/nvim-lspconfig")
+                end
+            }
+
+            -- 自动安装 LSP
+            use{
+                "williamboman/nvim-lsp-installer",
+                config = function()
+                    require("config/nvim-lsp-installer")
+                end
+            }
+
+            -- LSP UI 美化
+            use{
+                "tami5/lspsaga.nvim",
+                config = function()
+                    require("config/lspsaga")
+                end
+            }
+
+            -- LSP 进度显示
+            use{
+                "j-hui/fidget.nvim",
+                config = function()
+                    require("config/fidget")
+                end
+            }
+
+            -- 插入模式下获取函数签名
+            use{
+                "ray-x/lsp_signature.nvim",
+                config = function()
+                end
+            }
         end,
         -- 使用浮动窗口
         config = {
